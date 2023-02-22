@@ -1,7 +1,7 @@
 import React from "react";
-import {Stack} from "@mui/material";
-import {Link} from "react-router-dom";
-import {logo} from "../utils/constants";
+import { Stack } from "@mui/material";
+import { Link } from "react-router-dom";
+import { logo } from "../utils/constants";
 import SearchBar from "./SearchBar";
 
 const NavBar = () => {
@@ -19,10 +19,9 @@ const NavBar = () => {
     >
       <Link
         to="/"
-        style={{display: "flex", alignItems: "center", color: "white"}}
+        style={{ display: "flex", alignItems: "center", color: "white", marginLeft: "15px" }}
       >
-        {/* <img src={logo} alt="logo" height={45} /> */}
-        YOUTUBE LOGO
+        <img src={logo} alt="logo" height={45} />
       </Link>
       <SearchBar />
     </Stack>

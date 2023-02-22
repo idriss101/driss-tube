@@ -1,18 +1,18 @@
 import React from "react";
 
-import {Box, Stack, Typography, CardContent, CardMedia} from "@mui/material";
-import {CheckCircle} from "@mui/icons-material";
-import {Link} from "react-router-dom";
-import {demoProfilePicture} from "../utils/constants";
+import { Box, Stack, Typography, CardContent, CardMedia } from "@mui/material";
+import { CheckCircle } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { demoProfilePicture } from "../utils/constants";
 
-const ChannelCard = ({channelDetail, marginTop}) => {
+const ChannelCard = ({ channelDetail, marginTop }) => {
   console.log(channelDetail);
   return (
     <Box
       sx={{
         boxShadow: "none",
         borderRadius: "20px",
-        width: {xs: "356px", md: "330px"},
+        width: { xs: "356px", md: "330px" },
         height: "326px",
         display: "flex",
         justifyContent: "center",
@@ -33,7 +33,7 @@ const ChannelCard = ({channelDetail, marginTop}) => {
         >
           <CardMedia
             alt={channelDetail?.snippet?.title || "Channel"}
-            image={demoProfilePicture}
+            image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
             sx={{
               width: "180px",
               height: "180px",
@@ -44,7 +44,7 @@ const ChannelCard = ({channelDetail, marginTop}) => {
           />
           <Typography variant="h6" fontWeight="bold">
             {channelDetail?.snippet?.title || "Channel"}
-            <CheckCircle sx={{color: "gray", fontSize: 14, ml: "5px"}} />
+            <CheckCircle sx={{ color: "gray", fontSize: 14, ml: "5px" }} />
           </Typography>
           {channelDetail?.statistics?.subscriberCount && (
             <Typography variant="subtitle2">
